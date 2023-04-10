@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'user_auth/sign_up.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Регистрация</h2>
+        <form action="{% url 'sign_up' %}" method="post">
+            {% csrf_token %}
+            <div class="user-box">
+                <input type="tel" name="phone" required="">
+                <label>Номер</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Имя</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="last_name" required="">
+                <label>Фамилия</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="email" required="">
+                <label>Почта</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password1" required="">
+                <label>Пароль</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password2" required="">
+                <label>Пароль</label>
+                
+            </div>
+            
+            <a class="submit" href="{% url 'sign_up' %}">
+            <button class="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                регистрация
+            </button>
+            </a>
+            <a href="{% url 'sign_in' %}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                вход
+            </a>
+        </form>
+      </div>
+</body>
+</html>
